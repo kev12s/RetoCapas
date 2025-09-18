@@ -6,6 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
+
 <AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/24.0.1" fx:controller="view.FXMLDocumentController">
     <children>
         <Button fx:id="button" layoutX="126.0" layoutY="155.0" onAction="#handleButtonAction" text="Acceder" />
