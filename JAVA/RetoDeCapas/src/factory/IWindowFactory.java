@@ -3,12 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model;
+package factory;
+
+import javafx.stage.Stage;
+import model.User;
 
 /**
  *
- * @author 2dami
+ * @author kevin
  */
-public interface UserDAO {
-    public User checkUser(User user);
+public interface IWindowFactory {
+    Stage createLoginWindow();
+    Stage createMainWindow(User user);
 }

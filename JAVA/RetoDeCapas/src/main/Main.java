@@ -5,18 +5,31 @@
  */
 package main;
 
+import factory.FactoryProducer;
+import factory.IWindowFactory;
+import javafx.application.Application;
+import javafx.stage.Stage;
+
 /**
  *
  * @author 2dami
  */
-public class Main {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-        //hola 
-    }
+public class Main extends Application {
     
+    @Override
+    public void start(Stage primaryStage) {
+        // Usar la fábrica específica para login
+        IWindowFactory loginFactory = FactoryProducer.getFactory(
+        FactoryProducer.FactoryType.LOGIN);
+        
+        // Crear la ventana login usando la fábrica específica
+        Stage loginStage = loginFactory.createLoginWindow();
+        loginStage.show();
+    }
+   
+    
+    public static void main(String[] args) {
+        launch(args);
+    }
+
 }

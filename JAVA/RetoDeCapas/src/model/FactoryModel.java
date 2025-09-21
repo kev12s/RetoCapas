@@ -11,4 +11,9 @@ package model;
  */
 public class FactoryModel {
     
+    public UserDAO abrirImplementacion(){
+        UserDAO dao = new ImplementsBD();
+         
+         return dao;
+    }
 }

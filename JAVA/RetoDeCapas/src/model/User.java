@@ -15,9 +15,9 @@ public class User {
     private String dni;
     private int edad;
     private String email;
-    public User(String nombre, String contraseña, String dni, int edad, String email) {
+    
+    public User(String nombre, String dni, int edad, String email) {
         this.nombre = nombre;
-        this.contraseña = contraseña;
         this.dni = dni;
         this.edad = edad;
         this.email = email;
@@ -28,6 +28,11 @@ public class User {
         this.dni = "";
         this.edad = 0;
         this.email = "";
+    }
+     
+    public User(String nombre, String contraseña) {
+        this.nombre = nombre;
+        this.contraseña = contraseña;
     }
     public String getNombre() {
         return nombre;

@@ -5,10 +5,19 @@
  */
 package controller;
 
+import model.FactoryModel;
+import model.User;
+import model.UserDAO;
+
 /**
  *
  * @author 2dami
  */
 public class LoginController {
-    //prueba
+    FactoryModel factoryModel = new FactoryModel();
+    UserDAO dao = factoryModel.abrirImplementacion();
+    
+    public User checkUser(User user){
+        return dao.checkUser(user);
+    }
 }
