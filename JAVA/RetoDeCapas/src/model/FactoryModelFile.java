@@ -7,8 +7,11 @@ package model;
 
 /**
  *
- * @author 2dami
+ * @author kevin
  */
-public interface UserDAO {
-    public User checkUser(User user);
+public class FactoryModelFile {
+        public UserDAO abrirImplementacion(){
+        UserDAO dao = new ImplementsFile();         
+        return dao;
+    }
 }

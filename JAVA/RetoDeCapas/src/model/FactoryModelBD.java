@@ -9,7 +9,7 @@ package model;
  *
  * @author 2dami
  */
-public class FactoryModel {
+public class FactoryModelBD {
     
     public UserDAO abrirImplementacion(){
         UserDAO dao = new ImplementsBD();

@@ -59,7 +59,26 @@ public class FXMLDocumentController implements Initializable {
             currentStage.close();
             mainStage.show();
         }else{
-            messageLabel.setText("Usuario incorrecto");
+            User correctUserFile = cont.checkUserFile(user);
+            
+            if(correctUserFile != null){
+            
+                IWindowFactory mainFactory = FactoryProducer.getFactory(
+                FactoryProducer.FactoryType.MAIN
+                );
+
+
+                // Crear la ventana principal usando la fábrica específica
+                Stage mainStage = mainFactory.createMainWindow(correctUserFile);
+
+                // Cerrar ventana actual y mostrar la nueva
+                Stage currentStage = (Stage) usernameTextField.getScene().getWindow();
+                currentStage.close();
+                mainStage.show();
+            }else{
+                messageLabel.setText("Usuario incorrecto");
+            }
+            
         }
     }
 

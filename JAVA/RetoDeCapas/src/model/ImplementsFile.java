@@ -20,7 +20,7 @@ import java.util.logging.Logger;
  *
  * @author 2dami
  */
-public class ImplmentsFile implements UserDAO {
+public class ImplementsFile implements UserDAO {
 
     File fichUser = new File("user.dat");
 
@@ -37,6 +37,7 @@ public class ImplmentsFile implements UserDAO {
         while (!finArchivo) {
             try {
                 User aux = (User) ois.readObject();
+                System.out.println(aux.toString());
                 if (aux.getNombre().equals(user.getNombre())  && aux.getContraseña().equals(user.getContraseña())) {
                     user.setDni(aux.getDni());
                     user.setEdad(aux.getEdad());

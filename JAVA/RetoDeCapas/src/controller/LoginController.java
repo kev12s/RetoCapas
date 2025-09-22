@@ -5,7 +5,8 @@
  */
 package controller;
 
-import model.FactoryModel;
+import model.FactoryModelBD;
+import model.FactoryModelFile;
 import model.User;
 import model.UserDAO;
 
@@ -14,10 +15,19 @@ import model.UserDAO;
  * @author 2dami
  */
 public class LoginController {
-    FactoryModel factoryModel = new FactoryModel();
+    //abrir la implementacion con factoria de BD
+    FactoryModelBD factoryModel = new FactoryModelBD();
     UserDAO dao = factoryModel.abrirImplementacion();
+    
+    //abrir la implementacion con factoria de File
+    FactoryModelFile factoryModelFile = new FactoryModelFile();
+    UserDAO daoFile = factoryModelFile.abrirImplementacion();
     
     public User checkUser(User user){
         return dao.checkUser(user);
+    }
+    
+    public User checkUserFile(User user){
+        return daoFile.checkUser(user);
     }
 }
