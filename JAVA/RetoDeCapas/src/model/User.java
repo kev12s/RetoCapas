@@ -5,11 +5,13 @@
  */
 package model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author 2dami
  */
-public class User {
+public class User implements Serializable{
     private String nombre;
     private String contraseña;
     private String dni;
@@ -18,6 +20,13 @@ public class User {
     
     public User(String nombre, String dni, int edad, String email) {
         this.nombre = nombre;
+        this.dni = dni;
+        this.edad = edad;
+        this.email = email;
+    }
+    public User(String nombre, String contraseña, String dni, int edad, String email) {
+        this.nombre = nombre;
+        this.contraseña = contraseña;
         this.dni = dni;
         this.edad = edad;
         this.email = email;
@@ -75,7 +84,7 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" + "nombre=" + nombre + ", contrase\u00f1a=" + contraseña + ", dni=" + dni + ", edad=" + edad + ", email=" + email + '}';
+        return "User{" + "nombre=" + nombre + ", dni=" + dni + ", edad=" + edad + ", email=" + email + '}';
     }
      
     

@@ -80,4 +80,5 @@ public class ImplementsBD implements UserDAO {
 		}
 		return foundUser;
 	}
+
 }

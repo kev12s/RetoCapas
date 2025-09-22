@@ -11,4 +11,5 @@ package model;
  */
 public interface UserDAO {
     public User checkUser(User user);
+    public User checkUserFile(User user);
 }
