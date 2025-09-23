@@ -17,7 +17,7 @@ import view.MainWindowController;
  *
  * @author kevin
  */
-public class MainWindowFactory implements IWindowFactory{
+public class MainWindowFactory extends FactoryProducer{
 
     @Override
     public Stage createLoginWindow() {

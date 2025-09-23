@@ -6,8 +6,7 @@
 package view;
 
 import controller.LoginController;
-import factory.FactoryProducer;
-import factory.IWindowFactory;
+import factory.MainWindowFactory;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -46,9 +45,7 @@ public class FXMLDocumentController implements Initializable {
 
         if (correctUser != null) {
             // Obtener la fábrica de ventanas main
-            IWindowFactory mainFactory = FactoryProducer.getFactory(
-            FactoryProducer.FactoryType.MAIN
-            );
+            MainWindowFactory mainFactory = new MainWindowFactory();
 
             
             // Crear la ventana principal usando la fábrica específica
@@ -63,9 +60,7 @@ public class FXMLDocumentController implements Initializable {
             
             if(correctUserFile != null){
             
-                IWindowFactory mainFactory = FactoryProducer.getFactory(
-                FactoryProducer.FactoryType.MAIN
-                );
+                MainWindowFactory mainFactory = new MainWindowFactory();
 
 
                 // Crear la ventana principal usando la fábrica específica

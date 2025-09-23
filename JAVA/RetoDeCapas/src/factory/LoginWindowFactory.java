@@ -16,8 +16,9 @@ import model.User;
  *
  * @author kevin
  */
-public class LoginWindowFactory implements IWindowFactory {
-
+public class LoginWindowFactory extends FactoryProducer {
+  
+    
     @Override
     public Stage createLoginWindow() {
         try {

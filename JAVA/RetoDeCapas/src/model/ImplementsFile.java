@@ -37,7 +37,7 @@ public class ImplementsFile implements UserDAO {
         while (!finArchivo) {
             try {
                 User aux = (User) ois.readObject();
-                System.out.println(aux.toString());
+                
                 if (aux.getNombre().equals(user.getNombre())  && aux.getContraseña().equals(user.getContraseña())) {
                     user.setDni(aux.getDni());
                     user.setEdad(aux.getEdad());

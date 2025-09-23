@@ -5,8 +5,7 @@
  */
 package main;
 
-import factory.FactoryProducer;
-import factory.IWindowFactory;
+import factory.LoginWindowFactory;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
@@ -19,8 +18,8 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) {
         // Usar la fábrica específica para login
-        IWindowFactory loginFactory = FactoryProducer.getFactory(
-        FactoryProducer.FactoryType.LOGIN);
+        LoginWindowFactory loginFactory = new LoginWindowFactory();
+        
         
         // Crear la ventana login usando la fábrica específica
         Stage loginStage = loginFactory.createLoginWindow();

@@ -5,24 +5,15 @@
  */
 package factory;
 
+import javafx.stage.Stage;
+import model.User;
+
 /**
  *
  * @author kevin
  */
-public class FactoryProducer {
+public abstract class FactoryProducer {
     
-    public enum FactoryType {
-        LOGIN, MAIN // Tipos de fábricas disponibles
-    }
-    
-    public static IWindowFactory getFactory(FactoryType type) {
-        switch (type) {
-            case LOGIN:
-                return new LoginWindowFactory();
-            case MAIN:
-                return new MainWindowFactory();
-            default:
-                throw new IllegalArgumentException("Factory type not supported: " + type);
-        }
-    }
+    public abstract Stage createLoginWindow();
+    public abstract Stage createMainWindow(User user);
 }
