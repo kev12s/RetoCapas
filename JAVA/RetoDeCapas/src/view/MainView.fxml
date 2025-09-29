@@ -12,19 +12,19 @@
          <font>
             <Font size="15.0" />
          </font></Label>
-      <Label fx:id="lblUserName" layoutX="215.0" layoutY="208.0" prefHeight="17.0" prefWidth="150.0">
+      <Label fx:id="lblUserName" layoutX="215.0" layoutY="208.0" prefHeight="26.0" prefWidth="202.0">
          <font>
             <Font size="16.0" />
          </font></Label>
-      <Label fx:id="lblDNI" layoutX="215.0" layoutY="232.0" prefHeight="17.0" prefWidth="150.0">
+      <Label fx:id="lblDNI" layoutX="215.0" layoutY="232.0" prefHeight="26.0" prefWidth="202.0">
          <font>
             <Font size="16.0" />
          </font></Label>
-      <Label fx:id="lblEmail" layoutX="215.0" layoutY="256.0" prefHeight="17.0" prefWidth="150.0">
+      <Label fx:id="lblEmail" layoutX="215.0" layoutY="256.0" prefHeight="26.0" prefWidth="202.0">
          <font>
             <Font size="16.0" />
          </font></Label>
-      <Label fx:id="lblAge" layoutX="215.0" layoutY="281.0" prefHeight="17.0" prefWidth="150.0">
+      <Label fx:id="lblAge" layoutX="215.0" layoutY="281.0" prefHeight="26.0" prefWidth="202.0">
          <font>
             <Font size="16.0" />
          </font></Label>
