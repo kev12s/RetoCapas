@@ -25,36 +25,37 @@ public class ImplementsFile implements UserDAO {
     File fichUser = new File("user.dat");
 
     @Override
-    public User checkUser(User user) {
-        boolean finArchivo= false;
-        ObjectInputStream ois = null;
-        if(!fichUser.exists()){
-            addDataUser(fichUser);
-        }
+public User checkUser(User user) {
+    boolean finArchivo = false;
+    ObjectInputStream ois = null;
+    User foundUser = null; // Usar una variable separada
+    
+    if (!fichUser.exists()) {
+        addDataUser(fichUser);
+    }
 
-        try {	
-	 ois = new ObjectInputStream(new FileInputStream(fichUser));
-        while (!finArchivo) {
+    try {
+        ois = new ObjectInputStream(new FileInputStream(fichUser));
+        while (!finArchivo && foundUser == null) { // Salir cuando encontremos un usuario
             try {
                 User aux = (User) ois.readObject();
                 
-                if (aux.getNombre().equals(user.getNombre())  && aux.getContraseña().equals(user.getContraseña())) {
-                    user.setDni(aux.getDni());
-                    user.setEdad(aux.getEdad());
-                    user.setEmail(aux.getEmail());
-                    user.setNombre(aux.getNombre());
+                // Verificar si las credenciales coinciden
+                if (aux.getNombre().equals(user.getNombre()) && aux.getContraseña().equals(user.getContraseña())) {
+                    // Encontramos el usuario, guardamos sus datos
+                    foundUser = new User(aux.getNombre(), aux.getContraseña(), aux.getDni(), aux.getEdad(), aux.getEmail());
                 }
             } catch (EOFException e) {
                 finArchivo = true;
             }
         }
         ois.close();
-
+    } catch (Exception e) {
+        System.out.println("Fatal error: " + e.getMessage());
+        e.printStackTrace();
     }
-    catch(Exception e){
-                            System.out.println("Fatal error");
-                        }
-return user;
+    
+    return foundUser; // Retornar el usuario encontrado o null
 }
 
 public static void addDataUser(File fichUser) {
